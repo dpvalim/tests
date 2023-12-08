@@ -22,6 +22,13 @@ paths:
           content:
             application/json: {}
           description: Estabelecimento encontrado
+    delete:
+      responses:
+        "200":
+          description: Removido com sucesso
+        "404":
+          description: Não encontrado
+      summary: Remove um estabelecimento
     parameters:
     - name: cnpj
       schema:
