@@ -1,0 +1,30 @@
+---
+openapi: 3.0.2
+info:
+  title: Teste
+  version: 1.0.0
+servers:
+- url: "https://{env}.domain.com.br/{api}/{version}/"
+  description: Endereço da API no Gateway
+  variables:
+    env:
+      default: api
+      description: environment
+    api:
+      default: app-ec
+    version:
+      default: v2
+paths:
+  /estabelecimentos/{cnpj}:
+    get:
+      responses:
+        "200":
+          content:
+            application/json: {}
+          description: Estabelecimento encontrado
+    parameters:
+    - name: cnpj
+      schema:
+        type: string
+      in: path
+      required: true
